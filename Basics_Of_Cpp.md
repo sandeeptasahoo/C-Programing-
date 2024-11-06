@@ -22,10 +22,34 @@ The Object code is linked with the standard libraries
 eg: signed,unsigned.short,long
 ### qualifiers : 
 eg: const, volatile, static
+1. const :
+  1. once the variable is assigned can be changed. the error will be thrown during compilation.
+  2. the variable need to be initialised during declaration
+  3. a pointer cant point to a const variable. Only a const pointer can point to a const variable (int *const p = &x)
+  4. const reference does not require a memory variable to initialised.
+2. auto :
+   1. it is used to auto assignment of type during compilation.
 
 ## pointer
 1. void pointer : this can point to any type of variable
-2. pointer should always be initialised, else it will throw compilation error 
+2. pointer should always be initialised, else it will throw compilation error
+3. pointer can assign to null pointer (nullptr)
+
+## Reference 
+int x =10
+int y = 20
+int &ref = x
+ref = y 
+print(ref,x,y)
+ref = 20, x= 20, y=20
+
+here x is referent, ref is reference, y is just a value
+when reference need to point to some referent '&' is used 
+reference cant be initialised without initialisation 
+reference point to memory location of referent 
+if reference is assigned to some value, referent also changed 
+reference is just a different name of referent 
+
 ## Useful tips 
 1. in cpp header file : limits.h all integeral limits (macros) are mentioned
 2. in header file : cfloat.h all float limits (macros) are mentioned
