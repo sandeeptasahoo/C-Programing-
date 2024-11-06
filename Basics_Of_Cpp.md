@@ -17,3 +17,25 @@ checks the syntax and converts to object code
 3. Linking :
 The Object code is linked with the standard libraries
 
+## Primitive Type 
+### modifier : 
+eg: signed,unsigned.short,long
+### qualifiers : 
+eg: const, volatile, static
+
+## pointer
+1. void pointer : this can point to any type of variable
+2. pointer should always be initialised, else it will throw compilation error 
+## Useful tips 
+1. in cpp header file : limits.h all integeral limits (macros) are mentioned
+2. in header file : cfloat.h all float limits (macros) are mentioned
+3. any integer variable can be initialised with just curly bresses
+   eg: int i = 5 === int i {1}
+4. 
+
+## important methods : 
+1. cin.getline(<variable char array>,<max number of character expected>,<delimiter === the character to stop geting inputs eg: enter==='\n'>): takes input as string of size max size given, until the delimiter character is entered
+
+## development tips : 
+1. avoid copy initialisation (int i = 1). Prefer direct initialisation (int i {1})
+
