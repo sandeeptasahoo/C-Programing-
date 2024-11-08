@@ -50,6 +50,43 @@ reference point to memory location of referent
 if reference is assigned to some value, referent also changed 
 reference is just a different name of referent 
 
+## function pointers
+function can be passed to another function as function pointers 
+eg: void print(int count,char c)
+
+creating a function pointer 
+void(*pfn) (int,char) = print
+
+calling the function using function pointer 
+(*pfn) (8,'a')
+pfn(5,'b')
+
+## Memory Management 
+3 types of memory areas are taken from process address space 
+1. stack : allocated to local variable
+2. data section : allocated to global and static
+3. heap : allocated at runtime
+
+following function used to manage memory in c and cpp
+header name <stdlib.h>
+1. malloc : allocate raw memory on the heap
+2. calloc : allocates memory on the heap and initialized it to zero
+3. realloc : allocates larger chunk of memory allocated through the above function
+4. free : deallocates/released the memory
+
+* when malloc and calloc fails to allocate memory return a null pointer
+
+for cpp 
+use new operator
+eg: 
+int *p = new int(5);
+*p = 6;
+delete p;
+eg: int *p = new int [5];
+delete []p;
+
+* when new fails to allocate memory throws exception 
+
 ## Useful tips 
 1. in cpp header file : limits.h all integeral limits (macros) are mentioned
 2. in header file : cfloat.h all float limits (macros) are mentioned
@@ -59,6 +96,8 @@ reference is just a different name of referent
 
 ## important methods : 
 1. cin.getline(<variable char array>,<max number of character expected>,<delimiter === the character to stop geting inputs eg: enter==='\n'>): takes input as string of size max size given, until the delimiter character is entered
+2. atExit(<*pointer function>) : takes a method as parameter and executes it at the end of the program
+3. 
 
 ## development tips : 
 1. avoid copy initialisation (int i = 1). Prefer direct initialisation (int i {1})
