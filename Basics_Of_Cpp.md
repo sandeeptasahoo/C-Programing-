@@ -85,7 +85,49 @@ delete p;
 eg: int *p = new int [5];
 delete []p;
 
-* when new fails to allocate memory throws exception 
+* when new fails to allocate memory throws exception
+
+## Object oriented programming 
+### constructor
+1. Default Constructor:
+2. parameterised constructor:
+3. destructor:
+4. copy constructor:
+   It is important to implement when memory is located in heap.
+   Its used for deep copy implementation. 
+
+### const member function 
+this type of class (const class) or function cant modify the member variable. the compiler will throw error.
+the const class only able to call const functions by the object. 
+eg: const Car car();
+the const function cant modify the member variable. 
+eg: void foo()const{} 
+
+### default and delete 
+default constructor can be created by default keyword 
+class Integer{
+Integer() = default;
+}
+
+delete keyword is used to stop accepting a function type while compiling 
+eg: 
+void setValue(int value){
+m_value = value;
+}
+void setValue(float) = delete;
+
+setValue(5)// accepted 
+setValue(12.5f)// not accepted , compile error thrown
+### note : 
+1. there is no difference between structor and class. The only difference is, class has "private" as default modifier and struct has "public" as default modifier.
+2. structure can be used in inheritance.   
+
+## Move Semantics
+in case of copy constructer concept ,releasing the heap memory can throw error so deep copy is required through copy constructer 
+in move semantics, we will manage the senario by moving the pointer of old object to new object and assigning null pointer to old object. 
+this way during release of memory no issue will happen. 
+
+[uncomplete]
 
 ## Useful tips 
 1. in cpp header file : limits.h all integeral limits (macros) are mentioned
